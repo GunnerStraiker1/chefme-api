@@ -1,0 +1,11 @@
+mx/uady/jpademo/request/IngredienteRequest.class
+mx/uady/jpademo/service/RecetaService.class
+mx/uady/jpademo/repository/IngredienteRepository.class
+mx/uady/jpademo/resource/RecetaResource.class
+mx/uady/jpademo/model/Ingrediente.class
+mx/uady/jpademo/service/IngredienteService.class
+mx/uady/jpademo/resource/IngredienteResource.class
+mx/uady/jpademo/repository/RecetaRepository.class
+mx/uady/jpademo/JpaDemoApplication.class
+mx/uady/jpademo/request/RecetaRequest.class
+mx/uady/jpademo/model/Receta.class
