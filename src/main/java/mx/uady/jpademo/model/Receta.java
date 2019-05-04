@@ -1,20 +1,20 @@
 package mx.uady.jpademo.model;
 
-import java.util.Set;
+// import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+// import javax.persistence.JoinColumn;
+// import javax.persistence.JoinTable;
+// import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "receta")
 public class Receta {
     @Id
-    private Integer receta_id;
+    private Integer id_receta;
     @Column
     private String title;
     @Column
@@ -22,11 +22,12 @@ public class Receta {
     @Column
     private String image;
     @Column
-    private boolean isVerified;
+    private Integer verified;
 
-    @ManyToMany
-    @JoinTable(name = "indispensables", joinColumns = @JoinColumn(name = "receta_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
-    Set<Ingrediente> indispensables;
+    // @ManyToMany
+    // @JoinTable(name = "indispensables", joinColumns = @JoinColumn(name =
+    // "receta_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
+    // Set<Ingrediente> indispensables;
 
     public Receta() {
     }
@@ -35,14 +36,14 @@ public class Receta {
      * @return the receta_id
      */
     public Integer getReceta_id() {
-        return receta_id;
+        return id_receta;
     }
 
     /**
      * @param receta_id the receta_id to set
      */
-    public void setReceta_id(Integer receta_id) {
-        this.receta_id = receta_id;
+    public void setReceta_id(Integer id_receta) {
+        this.id_receta = id_receta;
     }
 
     /**
@@ -90,15 +91,15 @@ public class Receta {
     /**
      * @return true or false
      */
-    public boolean getVerified() {
-        return isVerified;
+    public Integer getVerified() {
+        return verified;
     }
 
     /**
      * @param isVerified the isVerified to set
      */
-    public void setVerified(boolean isVerified) {
-        this.isVerified = isVerified;
+    public void setVerified(Integer verified) {
+        this.verified = verified;
     }
 
     @Override
