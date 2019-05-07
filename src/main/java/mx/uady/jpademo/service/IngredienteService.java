@@ -46,7 +46,7 @@ public class IngredienteService {
         }
 
         Ingrediente ingrediente = new Ingrediente();
-        ingrediente.setIngrediente_id(registrados + 1);
+        // ingrediente.setIngrediente_id(registrados + 1);
         ingrediente.setName(request.getNombre());
         ingrediente.setDescription(request.getDescripcion());
         ingrediente.setMeasure(request.getMeasure());
