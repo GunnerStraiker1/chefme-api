@@ -1,11 +1,11 @@
 package mx.uady.jpademo.model;
 
-import java.util.Set;
+// import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+// import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +16,9 @@ public class Ingrediente {
     @Column
     private String name;
     @Column
-    private Integer quantity;
+    private String description;
+    @Column
+    private String quantity;
     @Column
     private String measure;
 
@@ -57,14 +59,14 @@ public class Ingrediente {
     /**
      * @return the quantity
      */
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
     /**
      * @param quantity the quantity to set
      */
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
@@ -80,6 +82,20 @@ public class Ingrediente {
      */
     public void setMeasure(String measure) {
         this.measure = measure;
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
