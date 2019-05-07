@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import mx.uady.jpademo.model.Receta;
 
 @Repository
-public interface RecetaRepository extends CrudRepository<Receta,String>{
-    
+public interface RecetaRepository extends CrudRepository<Receta, Integer> {
+    public Receta findByTitle(String title);
 }
