@@ -1,11 +1,13 @@
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/resource/RecetaResource.java
-/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/request/IngredienteRequest.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/request/RecetaRequest.java
-/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/repository/RecetaRepository.java
-/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/service/RecetaService.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/resource/IngredienteResource.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/repository/IngredienteRepository.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/JpaDemoApplication.java
+/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/repository/UsuarioRepository.java
+/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/request/IngredienteRequest.java
+/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/repository/RecetaRepository.java
+/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/model/Usuario.java
+/home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/service/RecetaService.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/model/Ingrediente.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/service/IngredienteService.java
 /home/victor/Documentos/Repositories/Recipes/src/main/java/mx/uady/jpademo/model/Receta.java

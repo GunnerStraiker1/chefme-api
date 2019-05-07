@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import mx.uady.jpademo.model.Ingrediente;
 
 @Repository
-public interface IngredienteRepository extends CrudRepository<Ingrediente,String>{
-    
+public interface IngredienteRepository extends CrudRepository<Ingrediente, Integer> {
+    public Ingrediente findByName(String name);
 }
