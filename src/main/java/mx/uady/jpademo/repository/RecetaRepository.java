@@ -12,6 +12,6 @@ import mx.uady.jpademo.model.Receta;
 public interface RecetaRepository extends CrudRepository<Receta, Integer> {
     public Receta findByTitle(String title);
 
-    @Query("FROM Receta Where title Like '%?1%'")
+    @Query("FROM Receta Where title Like %?1%")
     public List<Receta> getRecetasConIngrediente(String ingrediente);
 }
