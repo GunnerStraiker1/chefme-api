@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Categoria{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer receta_id;
+    private Integer categoria_id;
     @Column
     private String name;
     @Column
@@ -23,14 +23,14 @@ public class Categoria{
     /**
      * @return the receta_id
      */
-    public Integer getReceta_id() {
-        return receta_id;
+    public Integer getCategoria_id() {
+        return categoria_id;
     }
     /**
-     * @param receta_id the receta_id to set
+     * @param categoria_id the receta_id to set
      */
-    public void setReceta_id(Integer receta_id) {
-        this.receta_id = receta_id;
+    public void setCategoria_id(Integer categoria_id) {
+        this.categoria_id = categoria_id;
     }
 
     /**
