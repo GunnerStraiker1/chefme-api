@@ -24,11 +24,6 @@ public class Receta {
     @Column
     private Integer verified;
 
-    // @ManyToMany
-    // @JoinTable(name = "indispensables", joinColumns = @JoinColumn(name =
-    // "receta_id"), inverseJoinColumns = @JoinColumn(name = "ingrediente_id"))
-    // Set<Ingrediente> indispensables;
-
     public Receta() {
     }
 

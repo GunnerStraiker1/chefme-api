@@ -25,9 +25,6 @@ public class Ingrediente {
     @Column
     private String measure;
 
-    // @ManyToMany(mappedBy = "indispensables")
-    // Set<Receta> elementosIndispensables;
-
     public Ingrediente() {
     }
 

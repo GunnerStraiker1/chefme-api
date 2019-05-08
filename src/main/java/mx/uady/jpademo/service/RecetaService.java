@@ -31,4 +31,11 @@ public class RecetaService{
         getRecetaRepository().findAll().iterator().forEachRemaining(recetas::add);
         return recetas;
     }
+
+    public List<Receta> getRecetasByIngrediente(String ingrediente){
+        LOG.info("Llamada a listar recetas por igrediente: {} - Service", ingrediente);
+        List<Receta> recetas = new LinkedList<>();
+        getRecetaRepository().getRecetasConIngrediente(ingrediente).iterator().forEachRemaining(recetas::add);
+        return recetas;
+    }
 }
