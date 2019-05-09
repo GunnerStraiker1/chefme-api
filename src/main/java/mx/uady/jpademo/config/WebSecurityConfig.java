@@ -41,7 +41,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().httpBasic().disable()
 
-                .authorizeRequests().anyRequest().authenticated().antMatchers("/signup").permitAll().and()
+                .authorizeRequests()
+                .antMatchers("/recetas", "/ingredientes", "/recetas/*", "/ingredientes/*", "/recetas/receta/*",
+                        "/categorias", "/categorias/*")
+                .fullyAuthenticated().antMatchers("/signup", "/login").permitAll().and()
                 .addFilterBefore(new TokenFiltro(usuarioRepository), BasicAuthenticationFilter.class);
     }
 

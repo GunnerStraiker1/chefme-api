@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import mx.uady.jpademo.model.Token;
 import mx.uady.jpademo.model.Usuario;
+import mx.uady.jpademo.request.SigninRequest;
 import mx.uady.jpademo.request.SignupRequest;
 import mx.uady.jpademo.service.UsuarioService;
 
@@ -33,7 +35,13 @@ public class UsuarioResource {
         } else {
             return ResponseEntity.ok().body("User registered successfully!" + user.toString());
         }
+    }
 
+    @PostMapping("/login")
+    public ResponseEntity<Token> login(@Valid @RequestBody SigninRequest signinRequest) {
+        LOG.info("Llamada a iniciar sesion");
+        Token token = usuarioService.authentication(signinRequest);
+        return ResponseEntity.ok(token);
     }
 
 }

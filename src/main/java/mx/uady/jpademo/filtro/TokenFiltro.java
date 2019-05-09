@@ -1,7 +1,6 @@
 package mx.uady.jpademo.filtro;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -37,19 +36,19 @@ public class TokenFiltro extends GenericFilterBean {
 		HttpServletRequest servRequest = (HttpServletRequest) request;
 		String token = servRequest.getHeader(HttpHeaders.AUTHORIZATION);
 
-		// Usuario savedToken = usuarioRepo.findByToken(token);
+		Usuario savedToken = usuarioRepo.findByToken(token);
 		// boolean done = true;
 		/*
 		 * try{ Usuario as = savedToken.get(0); }catch(Exception e){ done = false; }
 		 */
 
-		// if (savedToken != null) {
-		// System.out.println(token);
+		if (savedToken != null) {
+			System.out.println(token);
 
-		Authentication auth = new UsernamePasswordAuthenticationToken(token, null, null);
-		SecurityContextHolder.getContext().setAuthentication(auth);
+			Authentication auth = new UsernamePasswordAuthenticationToken(token, null, null);
+			SecurityContextHolder.getContext().setAuthentication(auth);
 
-		// }
+		}
 		chain.doFilter(request, response);
 
 		// importante

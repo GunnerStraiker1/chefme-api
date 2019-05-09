@@ -1,16 +1,22 @@
 package mx.uady.jpademo.service;
 
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.server.ResponseStatusException;
 
+import mx.uady.jpademo.model.Token;
 import mx.uady.jpademo.model.Usuario;
 import mx.uady.jpademo.repository.UsuarioRepository;
+import mx.uady.jpademo.request.SigninRequest;
 import mx.uady.jpademo.request.SignupRequest;
 
 @Service
@@ -43,6 +49,29 @@ public class UsuarioService {
         LOG.info("Usuario guardado");
 
         return user;
+
+    }
+
+    public Token authentication(@Valid @RequestBody SigninRequest request) {
+        Usuario user = usuarioRepository.findByUser(request.getUser());
+        LOG.info("Validadndo credenciales");
+
+        if (user == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
+        }
+        if (!encoder.matches(request.getPassword(), user.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+        LOG.info("Creando token");
+        String token = UUID.randomUUID().toString();
+        user.setToken(token);
+        usuarioRepository.save(user);
+
+        Token tokenResponse = new Token();
+        tokenResponse.setToken(token);
+        LOG.info("Inicio de sesion exitoso");
+        return tokenResponse;
 
     }
 

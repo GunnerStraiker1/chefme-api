@@ -16,7 +16,7 @@ import mx.uady.jpademo.repository.RecetaRepository;
 import mx.uady.jpademo.request.RecetaRequest;
 
 @Service
-public class RecetaService{
+public class RecetaService {
     private final Logger LOG = LoggerFactory.getLogger(RecetaService.class);
 
     @Autowired
@@ -29,17 +29,23 @@ public class RecetaService{
         return recetaRepo;
     }
 
-    public List<Receta> getRecetas(){
+    public List<Receta> getRecetas() {
         LOG.info("Llamada a listar Recetas - Service");
         List<Receta> recetas = new LinkedList<>();
         getRecetaRepository().findAll().iterator().forEachRemaining(recetas::add);
         return recetas;
     }
 
-    public List<Receta> getRecetasByIngrediente(String ingrediente){
+    public List<Receta> getRecetasByIngrediente(String ingrediente) {
         LOG.info("Llamada a listar recetas por igrediente: {} - Service", ingrediente);
         List<Receta> recetas = new LinkedList<>();
         getRecetaRepository().getRecetasConIngrediente(ingrediente).iterator().forEachRemaining(recetas::add);
+        return recetas;
+    }
+
+    public Receta getRecetaById(Integer id) {
+        LOG.info("Llamada a la receta por id: {} - Service", id);
+        Receta recetas = getRecetaRepository().getRecetasConId(id);
         return recetas;
     }
 

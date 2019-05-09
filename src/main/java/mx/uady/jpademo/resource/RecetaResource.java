@@ -24,7 +24,7 @@ import mx.uady.jpademo.request.RecetaRequest;
 import mx.uady.jpademo.service.RecetaService;
 
 @RestController
-public class RecetaResource{
+public class RecetaResource {
     final Logger LOG = LoggerFactory.getLogger(RecetaResource.class);
 
     @Autowired
@@ -38,7 +38,7 @@ public class RecetaResource{
     }
 
     @GetMapping("/recetas")
-    public List<Receta> getRecetas(){
+    public List<Receta> getRecetas() {
         LOG.info("Llamada a listar recetas- Resource");
         List<Receta> recetas = new LinkedList<>();
         recetas = getRecetaService().getRecetas();
@@ -46,16 +46,23 @@ public class RecetaResource{
     }
 
     @GetMapping("/recetas/{ingrediente}")
-    public List<Receta> getRecetasByIngrediente(@PathVariable String ingrediente){
+    public List<Receta> getRecetasByIngrediente(@PathVariable String ingrediente) {
         LOG.info("Llamada a listar recetas por ingrediente: {} - Resource", ingrediente);
         List<Receta> recetas = new LinkedList<>();
         recetas = getRecetaService().getRecetasByIngrediente(ingrediente);
         return recetas;
     }
 
+    @GetMapping("/recetas/receta/{id}")
+    public Receta getRecetaById(@PathVariable Integer id) {
+        LOG.info("Llamada a listar recetas por id: {} - Resource", id);
+
+        Receta recetas = getRecetaService().getRecetaById(id);
+        return recetas;
+    }
+
     @PostMapping("/recetas")
-    public ResponseEntity<Receta> saveReceta(@RequestBody @Valid RecetaRequest request)
-            throws URISyntaxException {
+    public ResponseEntity<Receta> saveReceta(@RequestBody @Valid RecetaRequest request) throws URISyntaxException {
         LOG.info("Llamada a agregar Receta");
         Receta receta = getRecetaService().saveReceta(request);
         URI location = new URI("/recetas/" + receta.getTitle());

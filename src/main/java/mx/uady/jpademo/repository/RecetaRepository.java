@@ -14,4 +14,7 @@ public interface RecetaRepository extends CrudRepository<Receta, Integer> {
 
     @Query("FROM Receta Where title Like %?1%")
     public List<Receta> getRecetasConIngrediente(String ingrediente);
+
+    @Query("FROM Receta Where id_receta = ?1")
+    public Receta getRecetasConId(Integer id);
 }
