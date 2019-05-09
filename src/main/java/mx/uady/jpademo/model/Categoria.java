@@ -1,5 +1,7 @@
 package mx.uady.jpademo.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,7 +9,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import mx.uady.jpademo.model.enums.CategoriaEnum;
 
@@ -21,9 +26,10 @@ public class Categoria{
     @Enumerated(EnumType.STRING)
     @Column(name = "name")
     private CategoriaEnum name;
-    
-    @Column
-    private Integer quantity;
+
+    @OneToMany(mappedBy = "category")
+    @JsonManagedReference
+    private Set<Receta> recetas;
 
     public Categoria(){};
 
@@ -54,16 +60,17 @@ public class Categoria{
     }
 
     /**
-     * @return the quantity
+     * @return the recetas
      */
-    public Integer getQuantity() {
-        return quantity;
+    public Set<Receta> getRecetas() {
+        return recetas;
     }
+
     /**
-     * @param quantity the quantity to set
+     * @param recetas the recetas to set
      */
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setRecetas(Set<Receta> recetas) {
+        this.recetas = recetas;
     }
 
     @Override

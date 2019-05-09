@@ -48,7 +48,6 @@ public class CategoriaService {
 
         Categoria categoria = new Categoria();
         categoria.setName(request.getName());
-        categoria.setQuantity(request.getQuantity());
 
         categoria = getCategoriaRepo().save(categoria);
 
@@ -77,7 +76,6 @@ public class CategoriaService {
         Categoria newCategoria = new Categoria();
         newCategoria.setCategoria_id(categoria.getCategoria_id());
         newCategoria.setName(categoria.getName());
-        newCategoria.setQuantity(request.getQuantity());
 
         return getCategoriaRepo().save(newCategoria);
     }

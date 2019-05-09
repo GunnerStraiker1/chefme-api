@@ -9,6 +9,7 @@ public class RecetaRequest {
     private String titulo;
 
     private String preparacion;
+    private Integer categoria_id;
 
     public RecetaRequest() {
     }
@@ -39,5 +40,18 @@ public class RecetaRequest {
      */
     public void setPreparacion(String preparacion) {
         this.preparacion = preparacion;
+    }
+
+    /**
+     * @return the categoria_id
+     */
+    public Integer getCategoria_id() {
+        return categoria_id;
+    }
+    /**
+     * @param categoria_id the categoria_id to set
+     */
+    public void setCategoria_id(Integer categoria_id) {
+        this.categoria_id = categoria_id;
     }
 }

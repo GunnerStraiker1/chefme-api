@@ -5,10 +5,15 @@ package mx.uady.jpademo.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 // import javax.persistence.JoinColumn;
 // import javax.persistence.JoinTable;
 // import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "receta")
@@ -23,6 +28,14 @@ public class Receta {
     private String image;
     @Column
     private Integer verified;
+    @Column(name = "categoria_id")
+    private Integer categoria_id;
+
+    @ManyToOne
+    @MapsId("categoria_id")
+    @JoinColumn(name = "categoria_id")
+    @JsonBackReference
+    private Categoria category;
 
     public Receta() {
     }
@@ -97,9 +110,22 @@ public class Receta {
         this.verified = verified;
     }
 
+    /**
+     * @return the categoria_id
+     */
+    public Integer getCategoria_id() {
+        return categoria_id;
+    }
+    /**
+     * @param categoria_id the categoria_id to set
+     */
+    public void setCategoria_id(Integer categoria_id) {
+        this.categoria_id = categoria_id;
+    }
+
     @Override
     public String toString() {
         return "{" + " id='" + getReceta_id() + "'" + ", titulo='" + getTitle() + "'" + ", prepración='"
-                + getPreparation() + "'" + ", verificado='" + getVerified() + "'" + "}";
+                + getPreparation() + "'" + ", verificado='" + getVerified() + "'" + ", categoria_id='"+ getCategoria_id() +" +'}";
     }
 }
