@@ -2,10 +2,14 @@ package mx.uady.jpademo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import mx.uady.jpademo.model.enums.CategoriaEnum;
 
 @Entity
 @Table(name = "categoria")
@@ -13,8 +17,11 @@ public class Categoria{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoria_id;
-    @Column
-    private String name;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name")
+    private CategoriaEnum name;
+    
     @Column
     private Integer quantity;
 
@@ -36,13 +43,13 @@ public class Categoria{
     /**
      * @return the name
      */
-    public String getName() {
+    public CategoriaEnum getName() {
         return name;
     }
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
+    public void setName(CategoriaEnum name) {
         this.name = name;
     }
 

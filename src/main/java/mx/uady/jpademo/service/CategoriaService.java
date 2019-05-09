@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import mx.uady.jpademo.model.Categoria;
+import mx.uady.jpademo.model.enums.CategoriaEnum;
 import mx.uady.jpademo.repository.CategoriaRepository;
 import mx.uady.jpademo.request.CategoriaRequest;
 
@@ -54,7 +55,7 @@ public class CategoriaService {
         return categoria;
     }
 
-    public Categoria getCategoriaName(String nombre) {
+    public Categoria getCategoriaName(CategoriaEnum nombre) {
         LOG.info("Obtener categoria por nombre: {}", nombre);
         Categoria categoria = getCategoriaRepo().findByName(nombre);
 

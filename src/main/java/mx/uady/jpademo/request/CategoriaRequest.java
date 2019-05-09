@@ -1,13 +1,13 @@
 package mx.uady.jpademo.request;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
+
+import mx.uady.jpademo.model.enums.CategoriaEnum;
 
 public class CategoriaRequest {
 
-    @NotBlank
-    @Size(min = 3, max = 255)
-    private String name;
+    @NotNull
+    private CategoriaEnum name;
 
     private Integer quantity;
 
@@ -16,14 +16,14 @@ public class CategoriaRequest {
     /**
      * @return the nombre
      */
-    public String getName() {
+    public CategoriaEnum getName() {
         return name;
     }
 
     /**
      * @param name the nombre to set
      */
-    public void setName(String name) {
+    public void setName(CategoriaEnum name) {
         this.name = name;
     }
 

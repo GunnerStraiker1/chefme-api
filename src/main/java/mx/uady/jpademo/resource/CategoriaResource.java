@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.uady.jpademo.model.Categoria;
+import mx.uady.jpademo.model.enums.CategoriaEnum;
 import mx.uady.jpademo.request.CategoriaRequest;
 import mx.uady.jpademo.service.CategoriaService;
 
@@ -46,7 +47,7 @@ public class CategoriaResource {
     }
 
     @GetMapping("/categorias/{nombre}")
-    public ResponseEntity<Categoria> getCategoria(@PathVariable String nombre) {
+    public ResponseEntity<Categoria> getCategoria(@PathVariable CategoriaEnum nombre) {
         Categoria categoria = getCategoriaService().getCategoriaName(nombre);
         return ResponseEntity.ok().body(categoria);
     }
