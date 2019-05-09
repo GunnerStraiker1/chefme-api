@@ -8,11 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ingrediente")
+@Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idusuario;
+    private Integer idusuario;
     @Column
     private String user;
     @Column
@@ -34,14 +34,14 @@ public class Usuario {
     /**
      * @return the idusuario
      */
-    public String getIdusuario() {
+    public Integer getIdusuario() {
         return idusuario;
     }
 
     /**
      * @param idusuario the idusuario to set
      */
-    public void setIdusuario(String idusuario) {
+    public void setIdusuario(Integer idusuario) {
         this.idusuario = idusuario;
     }
 
