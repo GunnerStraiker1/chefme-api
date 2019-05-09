@@ -25,6 +25,12 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(String user, String password, String type) {
+        this.user = user;
+        this.password = password;
+        this.type = type;
+    }
+
     /**
      * @return the idusuario
      */
