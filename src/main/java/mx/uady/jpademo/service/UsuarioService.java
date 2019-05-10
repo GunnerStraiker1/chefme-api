@@ -60,7 +60,8 @@ public class UsuarioService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         }
-        if (!encoder.matches(request.getPassword(), user.getPassword())) {
+        if (!(user.getUser().equals(request.getUser()))
+                || !encoder.matches(request.getPassword(), user.getPassword())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
         LOG.info("Creando token");

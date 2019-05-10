@@ -103,6 +103,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return super.toString();
+        return ("\n User:" + getUser() + " Token: " + getToken() + " Type: " + getType());
     }
 }
