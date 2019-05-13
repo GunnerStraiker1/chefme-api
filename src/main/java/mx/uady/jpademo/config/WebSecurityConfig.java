@@ -39,13 +39,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("superUser")
-                .password("$2a$10$fcfPVW4LTSx3uo/Ot5abTeJ1L13l5qMaw6sibBJRDjS9ccDOA4QD.").authorities("ADMIN");
-        // .and().withUser("admin").password("adminPass")
-        // .authorities("ADMIN");
-    }
+    // @Override
+    // protected void configure(AuthenticationManagerBuilder auth) throws Exception
+    // {
+    // auth.inMemoryAuthentication().withUser("superUser")
+    // .password("$2a$10$fcfPVW4LTSx3uo/Ot5abTeJ1L13l5qMaw6sibBJRDjS9ccDOA4QD.").authorities("ADMIN");
+    // // .and().withUser("admin").password("adminPass")
+    // // .authorities("ADMIN");
+    // }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
