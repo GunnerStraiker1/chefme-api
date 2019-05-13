@@ -7,8 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 // import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "ingrediente")
@@ -24,6 +29,12 @@ public class Ingrediente {
     private String quantity;
     @Column
     private String measure;
+
+    @ManyToOne
+    @MapsId("receta_id")
+    @JoinColumn(name = "receta_id")
+    @JsonBackReference
+    private Receta instead;
 
     public Ingrediente() {
     }
@@ -98,6 +109,19 @@ public class Ingrediente {
         this.description = description;
     }
 
+    /**
+     * @return the instead
+     */
+    public Receta getInstead() {
+        return instead;
+    }
+    /**
+     * @param instead the instead to set
+     */
+    public void setInstead(Receta instead) {
+        this.instead = instead;
+    }
+    
     @Override
     public String toString() {
         return super.toString();

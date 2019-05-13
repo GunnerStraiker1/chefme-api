@@ -1,5 +1,7 @@
 package mx.uady.jpademo.model;
 
+import java.util.Set;
+
 // import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,12 +12,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 // import javax.persistence.JoinColumn;
 // import javax.persistence.JoinTable;
 // import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "receta")
@@ -49,6 +53,10 @@ public class Receta {
     @JoinColumn(name = "usuario_id")
     @JsonBackReference
     private Receta recetary;
+
+    @OneToMany(mappedBy = "instead")
+    @JsonManagedReference
+    private Set<Ingrediente> ingredientes;
 
     public Receta() {
     }
@@ -176,6 +184,20 @@ public class Receta {
      */
     public void setRecetary(Receta recetary) {
         this.recetary = recetary;
+    }
+
+    /**
+     * @return the ingredientes
+     */
+    public Set<Ingrediente> getIngredientes() {
+        return ingredientes;
+    }
+
+    /**
+     * @param ingredientes the ingredientes to set
+     */
+    public void setIngredientes(Set<Ingrediente> ingredientes) {
+        this.ingredientes = ingredientes;
     }
 
     @Override
