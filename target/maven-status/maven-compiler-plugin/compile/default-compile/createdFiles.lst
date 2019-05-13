@@ -11,14 +11,14 @@ mx/uady/jpademo/request/RecetaRequest.class
 mx/uady/jpademo/request/CategoriaRequest.class
 mx/uady/jpademo/filtro/TokenFiltro.class
 mx/uady/jpademo/repository/CategoriaRepository.class
-mx/uady/jpademo/resource/RecetaResource.class
 mx/uady/jpademo/model/Categoria.class
+mx/uady/jpademo/resource/RecetaResource.class
 mx/uady/jpademo/model/enums/CategoriaEnum.class
-mx/uady/jpademo/resource/UsuarioResource.class
 mx/uady/jpademo/repository/RecetaRepository.class
+mx/uady/jpademo/resource/UsuarioResource.class
 mx/uady/jpademo/service/CategoriaService.class
-mx/uady/jpademo/JpaDemoApplication.class
 mx/uady/jpademo/request/SigninRequest.class
+mx/uady/jpademo/JpaDemoApplication.class
 mx/uady/jpademo/repository/IngredienteRepository.class
 mx/uady/jpademo/resource/CategoriaResource.class
 mx/uady/jpademo/model/Usuario.class
