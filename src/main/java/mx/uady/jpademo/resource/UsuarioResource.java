@@ -28,10 +28,11 @@ public class UsuarioResource {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/usuarios/{nombre}")
+    @GetMapping("/usuarios/{usuario}")
     public ResponseEntity<Usuario> getUsuario(@PathVariable String usuario) {
-        Usuario usuario = usuarioService.getUsuario(usuario);
-        return ResponseEntity.ok().body(usuario);
+        LOG.info("Llamada a usuario");
+        Usuario user = usuarioService.getUsuario(usuario);
+        return ResponseEntity.ok().body(user);
     }
 
     @PostMapping("/signup")

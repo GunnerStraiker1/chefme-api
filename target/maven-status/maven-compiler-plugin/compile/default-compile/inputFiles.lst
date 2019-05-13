@@ -1,26 +1,26 @@
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\resource\RecetaResource.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\service\RecetaService.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\service\CategoriaService.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\request\CategoriaRequest.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\service\UsuarioService.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\filtro\TokenFiltro.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\resource\CategoriaResource.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\Usuario.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\repository\CategoriaRepository.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\repository\UsuarioRepository.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\service\IngredienteService.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\Ingrediente.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\request\SignupRequest.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\config\WebSecurityConfig.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\repository\RecetaRepository.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\JpaDemoApplication.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\Token.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\request\IngredienteRequest.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\Receta.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\Categoria.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\request\SigninRequest.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\repository\IngredienteRepository.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\resource\UsuarioResource.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\request\RecetaRequest.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\resource\IngredienteResource.java
-C:\Users\PC\Documents\8° Semestre\DAN\Proyecto\chefme-api\src\main\java\mx\uady\jpademo\model\enums\CategoriaEnum.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/Token.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/request/RecetaRequest.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/repository/UsuarioRepository.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/config/WebSecurityConfig.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/resource/IngredienteResource.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/JpaDemoApplication.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/enums/CategoriaEnum.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/request/SigninRequest.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/Categoria.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/resource/UsuarioResource.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/service/IngredienteService.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/Receta.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/repository/IngredienteRepository.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/service/UsuarioService.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/resource/CategoriaResource.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/filtro/TokenFiltro.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/Ingrediente.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/request/SignupRequest.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/resource/RecetaResource.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/service/RecetaService.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/request/CategoriaRequest.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/service/CategoriaService.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/model/Usuario.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/repository/CategoriaRepository.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/request/IngredienteRequest.java
+/mnt/sda1/Documentos/Escuela/8vo Semestre/AdministraciÃ³n de Proyectos II/chefme-api/src/main/java/mx/uady/jpademo/repository/RecetaRepository.java
