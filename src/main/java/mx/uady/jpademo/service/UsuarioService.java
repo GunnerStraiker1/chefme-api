@@ -36,6 +36,19 @@ public class UsuarioService {
         return usuarioRepository;
     }
 
+    public Usuario getUsuario(String user) {
+        LOG.info("Obtener Usuario por nombre: {}", user);
+        Usuario usuario = getUsuarioRepository().findByUser(user);
+
+        if (usuario == null) {
+            LOG.error("El usuario con nombre {} no existe", user);
+            // throw new RecursoNoEncontradoException("equipo"); -- Crear la clase para la
+            // excepcion
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return usuario;
+    }
+
     public Usuario saveUser(@Valid @RequestBody SignupRequest request) {
         LOG.info("Guardando informacion de usuario");
         if (usuarioRepository.existsByUser(request.getUser())) {
