@@ -12,6 +12,7 @@ public class RecetaRequest {
     private String image;
     private Integer calification;
     private Integer categoria_id;
+    private Integer usuario_id;
 
     public RecetaRequest() {
     }
@@ -84,5 +85,19 @@ public class RecetaRequest {
      */
     public void setCategoria_id(Integer categoria_id) {
         this.categoria_id = categoria_id;
+    }
+
+    /**
+     * @return the usuario_id
+     */
+    public Integer getUsuario_id() {
+        return usuario_id;
+    }
+
+    /**
+     * @param usuario_id the usuario_id to set
+     */
+    public void setUsuario_id(Integer usuario_id) {
+        this.usuario_id = usuario_id;
     }
 }

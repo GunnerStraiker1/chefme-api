@@ -35,12 +35,20 @@ public class Receta {
     private Integer calification;
     @Column(name = "categoria_id")
     private Integer categoria_id;
+    @Column(name = "usuario_id")
+    private Integer usuario_id;
 
     @ManyToOne
     @MapsId("categoria_id")
     @JoinColumn(name = "categoria_id")
     @JsonBackReference
     private Categoria category;
+
+    @ManyToOne
+    @MapsId("usuario_id")
+    @JoinColumn(name = "usuario_id")
+    @JsonBackReference
+    private Receta recetary;
 
     public Receta() {
     }
@@ -141,6 +149,33 @@ public class Receta {
      */
     public void setCategoria_id(Integer categoria_id) {
         this.categoria_id = categoria_id;
+    }
+
+    /**
+     * @return the usuario_id
+     */
+    public Integer getUsuario_id() {
+        return usuario_id;
+    }
+    /**
+     * @param usuario_id the usuario_id to set
+     */
+    public void setUsuario_id(Integer usuario_id) {
+        this.usuario_id = usuario_id;
+    }
+
+    /**
+     * @return the recetary
+     */
+    public Receta getRecetary() {
+        return recetary;
+    }
+
+    /**
+     * @param recetary the recetary to set
+     */
+    public void setRecetary(Receta recetary) {
+        this.recetary = recetary;
     }
 
     @Override

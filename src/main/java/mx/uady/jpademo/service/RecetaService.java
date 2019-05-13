@@ -66,6 +66,7 @@ public class RecetaService {
         receta.setCalification(request.getCalification());
         receta.setVerified(0);
         receta.setCategoria_id(request.getCategoria_id());
+        receta.setUsuario_id(request.getUsuario_id());
 
         receta = getRecetaRepository().save(receta);
 
@@ -98,6 +99,7 @@ public class RecetaService {
         newReceta.setImage(receta.getImage());
         newReceta.setVerified(0);
         newReceta.setCategoria_id(receta.getCategoria_id());
+        newReceta.setReceta_id(receta.getReceta_id());
 
         return getRecetaRepository().save(newReceta);
     }

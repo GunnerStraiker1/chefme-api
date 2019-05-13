@@ -1,11 +1,16 @@
 package mx.uady.jpademo.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "usuario")
@@ -21,6 +26,10 @@ public class Usuario {
     private String type;
     @Column
     private String token;
+
+    @OneToMany(mappedBy = "recetary")
+    @JsonManagedReference
+    private Set<Receta> recetas;
 
     public Usuario() {
     }
@@ -99,6 +108,19 @@ public class Usuario {
      */
     public void setType(String type) {
         this.type = type;
+    }
+
+    /**
+     * @return the recetas
+     */
+    public Set<Receta> getRecetas() {
+        return recetas;
+    }
+    /**
+     * @param recetas the recetas to set
+     */
+    public void setRecetas(Set<Receta> recetas) {
+        this.recetas = recetas;
     }
 
     @Override
