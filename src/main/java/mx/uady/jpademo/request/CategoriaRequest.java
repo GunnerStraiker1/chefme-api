@@ -9,9 +9,8 @@ public class CategoriaRequest {
     @NotNull
     private CategoriaEnum name;
 
-    private Integer quantity;
-
-    public CategoriaRequest() {}
+    public CategoriaRequest() {
+    }
 
     /**
      * @return the nombre
@@ -25,19 +24,5 @@ public class CategoriaRequest {
      */
     public void setName(CategoriaEnum name) {
         this.name = name;
-    }
-
-    /**
-     * @return the quantity
-     */
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    /**
-     * @param quantity the quantity to set
-     */
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
     }
 }

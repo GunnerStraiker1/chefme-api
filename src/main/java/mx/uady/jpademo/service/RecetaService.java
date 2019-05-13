@@ -62,6 +62,8 @@ public class RecetaService {
         // ingrediente.setIngrediente_id(registrados + 1);
         receta.setTitle(request.getTitulo());
         receta.setPreparation(request.getPreparacion());
+        receta.setImage(request.getImage());
+        receta.setCalification(request.getCalification());
         receta.setVerified(0);
         receta.setCategoria_id(request.getCategoria_id());
 

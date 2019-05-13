@@ -4,6 +4,8 @@ package mx.uady.jpademo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Table(name = "receta")
 public class Receta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_receta;
     @Column
     private String title;
@@ -28,6 +31,8 @@ public class Receta {
     private String image;
     @Column
     private Integer verified;
+    @Column
+    private Integer calification;
     @Column(name = "categoria_id")
     private Integer categoria_id;
 
@@ -111,11 +116,26 @@ public class Receta {
     }
 
     /**
+     * @return the calification
+     */
+    public Integer getCalification() {
+        return calification;
+    }
+
+    /**
+     * @param calification the calification to set
+     */
+    public void setCalification(Integer calification) {
+        this.calification = calification;
+    }
+
+    /**
      * @return the categoria_id
      */
     public Integer getCategoria_id() {
         return categoria_id;
     }
+
     /**
      * @param categoria_id the categoria_id to set
      */
@@ -126,6 +146,7 @@ public class Receta {
     @Override
     public String toString() {
         return "{" + " id='" + getReceta_id() + "'" + ", titulo='" + getTitle() + "'" + ", prepración='"
-                + getPreparation() + "'" + ", verificado='" + getVerified() + "'" + ", categoria_id='"+ getCategoria_id() +" +'}";
+                + getPreparation() + "'" + ", verificado='" + getVerified() + "'" + ", categoria_id='"
+                + getCategoria_id() + " +'}";
     }
 }

@@ -9,6 +9,8 @@ public class RecetaRequest {
     private String titulo;
 
     private String preparacion;
+    private String image;
+    private Integer calification;
     private Integer categoria_id;
 
     public RecetaRequest() {
@@ -26,6 +28,34 @@ public class RecetaRequest {
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    /**
+     * @return the calification
+     */
+    public Integer getCalification() {
+        return calification;
+    }
+
+    /**
+     * @param calification the calification to set
+     */
+    public void setCalification(Integer calification) {
+        this.calification = calification;
+    }
+
+    /**
+     * @return the image
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(String image) {
+        this.image = image;
     }
 
     /**
@@ -48,6 +78,7 @@ public class RecetaRequest {
     public Integer getCategoria_id() {
         return categoria_id;
     }
+
     /**
      * @param categoria_id the categoria_id to set
      */

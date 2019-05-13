@@ -65,7 +65,8 @@ public class RecetaResource {
     public ResponseEntity<Receta> saveReceta(@RequestBody @Valid RecetaRequest request) throws URISyntaxException {
         LOG.info("Llamada a agregar Receta");
         Receta receta = getRecetaService().saveReceta(request);
-        URI location = new URI("/recetas/" + receta.getTitle());
+        String slug = receta.getTitle().replace(" ", "-");
+        URI location = new URI("/recetas/" + slug);
         ResponseEntity<Receta> response = ResponseEntity.created(location).body(receta);
         return response;
     }
