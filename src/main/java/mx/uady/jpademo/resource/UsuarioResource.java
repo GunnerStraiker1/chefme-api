@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,7 @@ public class UsuarioResource {
     @Autowired
     private UsuarioService usuarioService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/usuarios/{usuario}")
     public ResponseEntity<Usuario> getUsuario(@PathVariable String usuario) {
         LOG.info("Llamada a usuario");
@@ -35,6 +37,7 @@ public class UsuarioResource {
         return ResponseEntity.ok().body(user);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/signup")
     public ResponseEntity<String> signup(@Valid @RequestBody SignupRequest request) throws URISyntaxException {
         LOG.info("Llamada a registrarse");
@@ -46,6 +49,7 @@ public class UsuarioResource {
         }
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/login")
     public ResponseEntity<Token> login(@Valid @RequestBody SigninRequest signinRequest) {
         LOG.info("Llamada a iniciar sesion");
