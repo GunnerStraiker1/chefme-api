@@ -1,5 +1,7 @@
 package mx.uady.jpademo.config;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -53,7 +55,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+        http.csrf().disable() // TODO: for production, must be reconfigured in order to disable only in
+                              // specific cases. This line was added because without it, HTTP POST requests
+                              // did not work.
+                .authorizeRequests().antMatchers("/**").permitAll().anyRequest().authenticated().and().formLogin()
+                .loginPage("/").permitAll().and().logout().permitAll();
         http.csrf().disable().httpBasic().disable()
 
                 .authorizeRequests()
@@ -63,5 +69,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, "/recetas/{id}").hasAuthority("ADMIN").antMatchers("/signup", "/login")
                 .permitAll().and().addFilterBefore(new TokenFiltro(usuarioRepository), BasicAuthenticationFilter.class);
     }
-
 }

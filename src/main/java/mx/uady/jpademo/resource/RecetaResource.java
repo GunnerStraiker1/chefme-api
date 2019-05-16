@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import mx.uady.jpademo.model.Receta;
 import mx.uady.jpademo.request.RecetaRequest;
 import mx.uady.jpademo.service.RecetaService;
 
 @RestController
+@CrossOrigin(origins = "*", methods= { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE}, maxAge = 3600)
 public class RecetaResource {
     final Logger LOG = LoggerFactory.getLogger(RecetaResource.class);
 
@@ -37,6 +40,7 @@ public class RecetaResource {
         return recetaService;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/recetas")
     public List<Receta> getRecetas() {
         LOG.info("Llamada a listar recetas- Resource");
@@ -45,6 +49,7 @@ public class RecetaResource {
         return recetas;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/recetas/{ingrediente}")
     public List<Receta> getRecetasByIngrediente(@PathVariable String ingrediente) {
         LOG.info("Llamada a listar recetas por ingrediente: {} - Resource", ingrediente);
@@ -53,6 +58,7 @@ public class RecetaResource {
         return recetas;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/recetas/receta/{id}")
     public Receta getRecetaById(@PathVariable Integer id) {
         LOG.info("Llamada a listar recetas por id: {} - Resource", id);
@@ -61,6 +67,7 @@ public class RecetaResource {
         return recetas;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/recetas")
     public ResponseEntity<Receta> saveReceta(@RequestBody @Valid RecetaRequest request) throws URISyntaxException {
         LOG.info("Llamada a agregar Receta");
@@ -71,6 +78,7 @@ public class RecetaResource {
         return response;
     }
 
+    @CrossOrigin(origins = "*", methods = RequestMethod.PUT, allowedHeaders="*")
     @PutMapping("/recetas")
     public ResponseEntity<Receta> editReceta(@RequestBody @Valid RecetaRequest request) {
         LOG.info("Llamada a editar Receta, request: {}", request);
@@ -78,6 +86,8 @@ public class RecetaResource {
         return ResponseEntity.ok().body(receta);
     }
 
+
+    @CrossOrigin(origins = "*", methods = RequestMethod.DELETE)
     @DeleteMapping("/recetas/{id}")
     public ResponseEntity<Void> deleteReceta(@PathVariable Integer id) {
         LOG.info("Llamada a eliminar Receta {}", id);

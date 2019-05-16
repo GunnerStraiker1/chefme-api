@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +39,7 @@ public class CategoriaResource {
         return categoriaService;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/categorias")
     public List<Categoria> getCategorias() {
         LOG.info("Llamada a listar categorias - Resource");
@@ -46,12 +48,14 @@ public class CategoriaResource {
         return categorias;
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/categorias/{nombre}")
     public ResponseEntity<Categoria> getCategoria(@PathVariable CategoriaEnum nombre) {
         Categoria categoria = getCategoriaService().getCategoriaName(nombre);
         return ResponseEntity.ok().body(categoria);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/categorias")
     public ResponseEntity<Categoria> saveCategoria(@RequestBody @Valid CategoriaRequest request)
             throws URISyntaxException {
@@ -62,6 +66,7 @@ public class CategoriaResource {
         return response;
     }
 
+    @CrossOrigin(origins = "*")
     @PutMapping("/categorias")
     public ResponseEntity<Categoria> editCategoria(@RequestBody @Valid CategoriaRequest request) {
         LOG.info("Llamada a editar Categoria, request: {}", request);
@@ -69,6 +74,7 @@ public class CategoriaResource {
         return ResponseEntity.ok().body(categoria);
     }
 
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/categorias/{id}")
     public ResponseEntity<Void> deleteCategoria(@PathVariable Integer id) {
         LOG.info("Llamada a eliminar Categoria {}", id);

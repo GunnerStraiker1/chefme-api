@@ -7,7 +7,7 @@ public class RecetaRequest {
     @NotBlank
     @Size(min = 3, max = 255)
     private String titulo;
-
+    private Integer id_receta;
     private String preparacion;
     private String image;
     private Integer calification;
@@ -15,6 +15,14 @@ public class RecetaRequest {
     private Integer usuario_id;
 
     public RecetaRequest() {
+    }
+
+    public Integer getId_receta() {
+        return id_receta;
+    }
+
+    public void setId_receta(Integer id_receta) {
+        this.id_receta = id_receta;
     }
 
     /**
