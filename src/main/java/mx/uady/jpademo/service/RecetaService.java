@@ -122,4 +122,11 @@ public class RecetaService {
         }
         return optional.get();
     }
+
+    public Receta calificateReceta(Integer id, Integer puntuacion){
+        Receta receta = getRecetaRepository().getRecetasConId(id);
+        receta.setCalification(receta.getCalification()+puntuacion);
+        receta.setVotos(receta.getVotos()+1);
+        return receta;
+    }
 }

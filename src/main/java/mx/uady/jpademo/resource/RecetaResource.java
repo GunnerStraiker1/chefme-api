@@ -86,6 +86,14 @@ public class RecetaResource {
         return ResponseEntity.ok().body(receta);
     }
 
+    @CrossOrigin(origins = "*", methods = RequestMethod.PUT, allowedHeaders="*")
+    @PutMapping("/recetas/{id}/{puntuacion}")
+    public ResponseEntity<Receta> calificateReceta(@PathVariable Integer id, @PathVariable Integer puntuacion) {
+        LOG.info("Llamada a calficar Receta, id: {}", id);
+        Receta receta = getRecetaService().calificateReceta(id,puntuacion);
+        return ResponseEntity.ok().body(receta);
+    }
+
 
     @CrossOrigin(origins = "*", methods = RequestMethod.DELETE)
     @DeleteMapping("/recetas/{id}")

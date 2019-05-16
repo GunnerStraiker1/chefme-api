@@ -41,6 +41,8 @@ public class Receta {
     private Integer categoria_id;
     @Column(name = "usuario_id")
     private Integer usuario_id;
+    @Column
+    private Integer votos;
 
     @ManyToOne
     @MapsId("categoria_id")
@@ -198,6 +200,19 @@ public class Receta {
      */
     public void setIngredientes(Set<Ingrediente> ingredientes) {
         this.ingredientes = ingredientes;
+    }
+
+    /**
+     * @return the votos
+     */
+    public Integer getVotos() {
+        return votos;
+    }
+    /**
+     * @param votos the votos to set
+     */
+    public void setVotos(Integer votos) {
+        this.votos = votos;
     }
 
     @Override
