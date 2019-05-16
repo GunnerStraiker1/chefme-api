@@ -90,15 +90,17 @@ public class RecetaService {
         LOG.info("Llamada a editar Receta - Service");
         Receta receta = getRecetaTitle(request.getTitulo());
 
-        getRecetaRepository().delete(receta);
+        // getRecetaRepository().delete(receta);
 
         Receta newReceta = new Receta();
-        newReceta.setReceta_id(receta.getReceta_id());
+        newReceta.setReceta_id(request.getId_receta());
         newReceta.setTitle(receta.getTitle());
         newReceta.setPreparation(request.getPreparacion());
         newReceta.setImage(receta.getImage());
         newReceta.setVerified(0);
         newReceta.setCategoria_id(receta.getCategoria_id());
+        newReceta.setCalification(receta.getCalification());
+        newReceta.setUsuario_id(receta.getUsuario_id());
         newReceta.setReceta_id(receta.getReceta_id());
 
         return getRecetaRepository().save(newReceta);
